@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrainements - DASSOLT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-vehicules">
+
+  <main class="vehicules-container">
+
+    <a href="index2.html" class="retour">← Retour à l'accueil</a>
+
+    <h1>Se préparer au combat</h1>
+    <h2>Entrainement intensif</h2>
+
+    <div class="slider">
+
+      <button class="prev">❮</button>
+
+      <div class="slides">
+        <img src="Entrainement_crew.jpg" class="slide active" alt="#">
+        <img src="Briefing.jpg" class="slide" alt="#">
+        <img src="Exercice_de_situation.jpg" class="slide" alt="#">
+      </div>
+
+      <button class="next">❯</button>
+
+    </div>
+
+    <div class="texte-wrapper">
+      <p class="texte">
+        Toute unité, quelque soit leur spécialité doit s'entrainer pour le combat. Des sessions de renforcements sont régulièrement mise en place pour eux.
+    </div>
+
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slides[i].classList.add("active");
+    }
+
+    document.querySelector(".next").onclick = () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    };
+
+    document.querySelector(".prev").onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    };
+  </script>
+
+</body>
+</html>
