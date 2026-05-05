@@ -1,0 +1,612 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: white;
+  background: #020502;
+}
+
+/* ================= FONDS PRINCIPAUX ================= */
+
+body.accueil-page,
+body.page-grade,
+body.page-vehicules {
+  background:
+    radial-gradient(circle at center, rgba(50, 120, 40, 0.10), transparent 45%),
+    linear-gradient(rgba(0, 5, 0, 0.78), rgba(0, 8, 0, 0.90)),
+    url("Reunion_DASSOLT.jpg") center/cover fixed no-repeat;
+}
+
+/* ================= PAGE HISTOIRE ================= */
+
+body.page-histoire {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.05),
+      rgba(0,0,0,0.12)
+    ),
+    url("Histoire.jpg");
+
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ================= ACCUEIL ================= */
+
+body.accueil-page {
+  padding: 55px 20px;
+}
+
+.hero {
+  width: 90%;
+  max-width: 980px;
+
+  margin: 0 auto 38px;
+  padding: 36px 42px;
+
+  text-align: center;
+
+  background: rgba(4, 12, 4, 0.84);
+
+  border: 1px solid rgba(160, 255, 110, 0.45);
+  border-radius: 24px;
+
+  box-shadow:
+    0 0 45px rgba(0,0,0,0.9),
+    0 0 25px rgba(120,255,80,0.16),
+    inset 0 0 25px rgba(160,255,110,0.06);
+}
+
+.hero h1 {
+  font-size: 2.35rem;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  color: #b7ff7a;
+
+  text-shadow:
+    0 0 10px rgba(183,255,122,0.45),
+    0 0 25px rgba(183,255,122,0.25);
+}
+
+.hero p {
+  margin-top: 14px;
+
+  font-size: 1.12rem;
+  font-weight: 700;
+
+  color: #ecffe4;
+}
+
+/* ================= MENU ================= */
+
+.menu-principal {
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 50;
+}
+
+.menu-principal ul {
+  list-style: none;
+}
+
+.menu-principal > ul {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.menu-principal li {
+  position: relative;
+}
+
+.menu-principal a {
+  display: block;
+
+  padding: 13px 19px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  white-space: nowrap;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16,35,15,0.94),
+      rgba(5,12,5,0.96)
+    );
+
+  border: 1px solid rgba(183,255,122,0.42);
+  border-radius: 13px;
+
+  transition: 0.22s ease;
+}
+
+.menu-principal a:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(90,130,55,0.98),
+      rgba(25,50,20,0.98)
+    );
+
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* ================= SOUS MENU ================= */
+
+.sous {
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 260px;
+  padding: 12px;
+
+  background: rgba(2,8,2,0.98);
+
+  border: 1px solid rgba(183,255,122,0.42);
+  border-radius: 0 0 18px 18px;
+
+  z-index: 99;
+}
+
+.deroulant:hover > .sous {
+  display: block;
+}
+
+.sous li {
+  margin: 7px 0;
+}
+
+.sous a {
+  background: rgba(15,30,14,0.98);
+  border-radius: 12px;
+}
+
+/* ================= PAGES ================= */
+
+body.page-grade,
+body.page-vehicules {
+  padding: 45px 20px;
+}
+
+.grades-container {
+  width: 92%;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.retour {
+  display: inline-block;
+
+  margin-bottom: 22px;
+  padding: 11px 16px;
+
+  color: #d6ffad;
+  text-decoration: none;
+  font-weight: 900;
+
+  background: rgba(45,75,35,0.75);
+
+  border: 1px solid rgba(183,255,122,0.4);
+  border-radius: 11px;
+}
+
+.retour:hover {
+  background: rgba(90,130,60,0.9);
+}
+
+/* ================= TITRES ================= */
+
+.grades-container h1,
+.vehicules-container h1 {
+  margin-bottom: 28px;
+
+  color: #b7ff7a;
+
+  font-size: 2.6rem;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* ================= CARTES ================= */
+
+.grade-card {
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 24px;
+  padding: 27px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8,17,8,0.94),
+      rgba(3,7,3,0.96)
+    );
+
+  border: 1px solid rgba(255,255,255,0.10);
+  border-left: 7px solid #b7ff7a;
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 32px rgba(0,0,0,0.78);
+}
+
+.grade-card h2 {
+  margin-bottom: 11px;
+
+  color: #b7ff7a;
+  font-size: 1.6rem;
+}
+
+.grade-card p {
+  margin-top: 12px;
+
+  line-height: 1.78;
+  font-size: 1.09rem;
+}
+
+/* ================= HISTOIRE ================= */
+
+.page-histoire .grades-container {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+
+  padding: 0 35px;
+
+  margin: 0;
+
+  position: relative;
+}
+
+/* BOUTON RETOUR */
+
+.page-histoire .retour {
+  position: absolute;
+
+  top: 0;
+  left: 35px;
+}
+
+/* TITRE */
+
+.page-histoire h1 {
+  position: absolute;
+
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #b7ff7a;
+
+  font-size: 2.4rem;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 12px rgba(0,0,0,0.9);
+
+  z-index: 5;
+
+  white-space: nowrap;
+}
+
+/* BLOC HISTOIRE */
+
+.histoire-operation {
+  position: absolute;
+
+  top: 95px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 900px;
+  max-width: 90%;
+
+  padding: 18px 22px;
+
+  border-left: 5px solid #ff7a00;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20,10,0,0.58),
+      rgba(5,5,5,0.52)
+    );
+
+  backdrop-filter: blur(3px);
+
+  box-shadow:
+    0 0 25px rgba(255,120,0,0.18);
+}
+
+/* TITRE HISTOIRE */
+
+.histoire-operation h2 {
+  color: #ff7a00;
+
+  text-transform: uppercase;
+
+  font-size: 1.1rem;
+}
+
+.histoire-operation h2::before {
+  content: "🔥 ";
+}
+
+/* TEXTE HISTOIRE */
+
+.histoire-operation p {
+  text-align: justify;
+
+  font-size: 0.82rem;
+  line-height: 1.45;
+
+  margin-top: 8px;
+
+  color: #fff3e6;
+}
+
+/* BADGE */
+
+.histoire-operation::after {
+  content: "ARCHIVES DASSOLT";
+
+  display: inline-block;
+
+  margin-top: 12px;
+  padding: 6px 10px;
+
+  color: #ffd6a0;
+
+  background: rgba(180,80,0,0.22);
+
+  border: 1px solid rgba(255,140,0,0.30);
+  border-radius: 7px;
+
+  font-size: 0.58rem;
+  font-weight: 900;
+}
+
+/* ================= POLICE MILITAIRE ================= */
+
+.police-militaire {
+  padding: 28px 235px 28px 28px;
+
+  border-left-color: #2f9bff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,18,45,0.98),
+      rgba(0,5,12,0.97)
+    );
+}
+
+.police-militaire h2 {
+  color: #4aa3ff;
+}
+
+/* ================= COS ================= */
+
+.cos {
+  border-left-color: #ff2b2b;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(55,0,0,0.98),
+      rgba(13,0,0,0.97)
+    );
+}
+
+.cos h2 {
+  color: #ff4a4a;
+}
+
+/* ================= VEHICULES ================= */
+
+.vehicules-container {
+  width: 96vw;
+  max-width: 1550px;
+
+  margin: auto;
+  padding: 27px;
+
+  background: rgba(5,12,5,0.82);
+
+  border: 1px solid rgba(183,255,122,0.28);
+  border-radius: 20px;
+}
+
+.slider {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.slides {
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  background: black;
+
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.prev,
+.next {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 64px;
+  height: 64px;
+
+  background: rgba(0,0,0,0.84);
+
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 14px;
+
+  color: white;
+  font-size: 38px;
+
+  cursor: pointer;
+  z-index: 5;
+}
+
+.prev {
+  left: 22px;
+}
+
+.next {
+  right: 22px;
+}
+
+.texte-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.texte {
+  max-width: 950px;
+  padding: 28px;
+
+  background: rgba(0,0,0,0.80);
+
+  border-left: 6px solid #b7ff7a;
+  border-radius: 14px;
+
+  font-size: 1.32rem;
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+  body.accueil-page,
+  body.page-grade,
+  body.page-vehicules {
+    padding: 20px 12px;
+  }
+
+  .page-histoire .grades-container {
+    padding: 18px 12px;
+  }
+
+  .hero h1 {
+    font-size: 1.45rem;
+  }
+
+  .menu-principal > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-principal li {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .menu-principal a {
+    text-align: center;
+  }
+
+  .sous {
+    position: static;
+    transform: none;
+    min-width: 100%;
+  }
+
+  .grades-container,
+  .vehicules-container {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .page-histoire h1 {
+    position: static;
+    transform: none;
+    margin-top: 18px;
+    font-size: 1.7rem;
+    white-space: normal;
+  }
+
+  .histoire-operation {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .histoire-operation p {
+    font-size: 0.76rem;
+  }
+
+  .prev,
+  .next {
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+  }
+
+  .texte {
+    font-size: 1rem;
+  }
+}

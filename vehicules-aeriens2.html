@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Véhicules aériens - DASSOLT</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .slide-wrapper {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .slide-wrapper.active {
+      opacity: 1;
+    }
+
+    .slide-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: black;
+      display: block;
+    }
+
+    .slide-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 18px 0;
+
+      background: rgba(0, 0, 0, 0);
+      color: white;
+
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      pointer-events: none;
+    }
+
+    .slide-wrapper:hover .slide-label {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.65);
+    }
+    .slide-wrapper {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none; /* 👈 bloque le hover sur les slides cachées */
+}
+
+.slide-wrapper.active {
+  opacity: 1;
+  pointer-events: auto; /* 👈 active le hover uniquement sur la slide visible */
+}
+  </style>
+</head>
+
+<body class="page-vehicules">
+
+  <main class="vehicules-container">
+
+    <a href="index2.html" class="retour">← Retour à l'accueil</a>
+
+    <h1>UNITÉS AERIENNES - DASSOLT</h1>
+    
+
+    <div class="slider">
+
+      <button class="prev">❮</button>
+
+      <div class="slides">
+        <div class="slide-wrapper active">
+          <img src="Raiju.jpg" alt="F-160 Raiju">
+          <div class="slide-label">F-160 Raiju </div>
+        </div>
+        <div class="slide-wrapper">
+          <img src="B11_Strikeforce.jpg" alt="Protection rapprochée">
+          <div class="slide-label">B11-Strikeforce en Support</div>
+        </div>
+        <div class="slide-wrapper">
+          <img src="B11_Strikeforce2.jpg" alt="B11-Strikeforce ">
+          <div class="slide-label">B11-Strikeforce au sol</div>
+        </div>
+        <div class="slide-wrapper">
+          <img src="Avenger.jpg" alt="Mammoth Avenger">
+          <div class="slide-label">Mammoth Avenger EN DEMONSTRATION</div>
+        </div>
+        <div class="slide-wrapper">
+          <img src="Rassemblement.jpg" alt="Rassemblement">
+          <div class="slide-label">Rassemblement</div>
+        </div>
+      </div>
+
+      <button class="next">❯</button>
+
+    </div>
+
+    <div class="texte-wrapper">
+      <p class="texte">
+        Les unités aériennes assurent la reconnaissance, la surveillance et le transport rapide du crew.
+        Elles permettent d'anticiper les menaces, de sécuriser les zones sensibles et d'intervenir rapidement
+        en cas de situation critique. Leur rôle est essentiel pour le contrôle du terrain et la protection des membres.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    const wrappers = document.querySelectorAll(".slide-wrapper");
+    let index = 0;
+
+    function showSlide(i) {
+      wrappers.forEach(w => w.classList.remove("active"));
+      wrappers[i].classList.add("active");
+    }
+
+    document.querySelector(".next").onclick = () => {
+      index = (index + 1) % wrappers.length;
+      showSlide(index);
+    };
+
+    document.querySelector(".prev").onclick = () => {
+      index = (index - 1 + wrappers.length) % wrappers.length;
+      showSlide(index);
+    };
+  </script>
+
+</body>
+</html>

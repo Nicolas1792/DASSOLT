@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Véhicules aériens - DASSOLT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-vehicules">
+
+  <main class="vehicules-container">
+
+    <a href="index2.html" class="retour">← Retour à l'accueil</a>
+
+    <h1>VÉHICULES AÉRIENS</h1>
+    <h2>Support aérien</h2>
+
+    <div class="slider">
+
+      <button class="prev">❮</button>
+
+      <div class="slides">
+        <img src="Raiju.jpg" class="slide active">
+        <img src="B11_Strikeforce.jpg" class="slide">
+        <img src="B11_Strikeforce2.jpg" class="slide">
+        <img src="Avenger.jpg" class="slide">
+        <img src="Rassemblement.jpg" class="slide">
+      </div>
+
+      <button class="next">❯</button>
+
+    </div>
+
+    <!-- TEXTE CENTRÉ -->
+    <div class="texte-wrapper">
+      <p class="texte">
+        Les unités aériennes assurent la reconnaissance, la surveillance et le transport rapide du crew.
+        Elles permettent d’anticiper les menaces, de sécuriser les zones sensibles et d’intervenir rapidement
+        en cas de situation critique. Leur rôle est essentiel pour le contrôle du terrain et la protection des membres.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(s => s.classList.remove("active"));
+      slides[i].classList.add("active");
+    }
+
+    document.querySelector(".next").onclick = () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    };
+
+    document.querySelector(".prev").onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    };
+  </script>
+
+</body>
+</html>
