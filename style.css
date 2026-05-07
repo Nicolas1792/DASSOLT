@@ -413,7 +413,8 @@ body.page-vehicules {
       135deg,
       rgba(0,18,45,0.98),
       rgba(0,5,12,0.97)
-    );
+    ),
+    url("Police_militaire.jpg") center/cover no-repeat;
 }
 
 .police-militaire h2 {
